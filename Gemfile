@@ -47,4 +47,4 @@ end
 
 #------------------------------------------
 gem 'devise'
-gem 'omniauth-twitter', '~> 1.3'
+# gem 'omniauth-twitter', '~> 1.3'
