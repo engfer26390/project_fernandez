@@ -50,3 +50,14 @@ gem 'devise'
 gem 'devise-async'
 gem 'omniauth-twitter'
 gem 'twitter'
+
+gem 'pry-byebug', '~> 3.4', '>= 3.4.2', group: :development
+gem 'awesome_print', '~> 1.7', :group => :development
+
+#para que no salgan las peticiones de precompilado assets en la consola
+gem 'quiet_assets', '~> 1.1', :group => :development
+
+group :production do
+  #Rails 12factor for Heroku: https://github.com/heroku/rails_12factor
+  gem 'rails_12factor'
+end

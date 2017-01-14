@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :identities
 
-  validates_presence_of :username
+  # validates_presence_of :username
 
   def twitter
     identities.where( :provider => "twitter" ).first
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     user=self.new
     user.name = identity.name # assuming the user model has a name
     user.username = identity.name.gsub(" ","") # assuming the user model has a name
-    user.email = identity.email || "#{user.username}-CHANGEME@example.com"
+    user.email = identity.email || "#{user.username}@example.com"
     user.password = Devise.friendly_token[0,20]
     user.skip_confirmation!
     user.save(validate: false)
