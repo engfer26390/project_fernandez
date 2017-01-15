@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Worker Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @worker_profiles.each do |worker_profile| %>
+      <tr>
+        <td><%= link_to 'Show', worker_profile %></td>
+        <td><%= link_to 'Edit', edit_worker_profile_path(worker_profile) %></td>
+        <td><%= link_to 'Destroy', worker_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Worker profile', new_worker_profile_path %>

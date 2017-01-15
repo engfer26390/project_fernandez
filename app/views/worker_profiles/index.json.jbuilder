@@ -1,0 +1,1 @@
+json.array! @worker_profiles, partial: 'worker_profiles/worker_profile', as: :worker_profile

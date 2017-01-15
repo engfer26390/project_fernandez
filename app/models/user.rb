@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,:confirmable,
+  devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :omniauthable,:validatable,
     :omniauth_providers => [:twitter]
 
   has_many :identities
-
+  belongs_to :profile, polymorphic: true
   # validates_presence_of :username
 
   def twitter
