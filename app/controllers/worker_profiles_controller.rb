@@ -69,6 +69,7 @@ class WorkerProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_profile_params
-      params.require(:worker_profile).permit(:nickname, :bio)
+      params.require(:worker_profile).permit(:nickname, :bio,
+      user_attributes: [ :id, :email, :password, :password_confirmation ])
     end
 end
