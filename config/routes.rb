@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :requests
-  resources :reference_lists
-  resources :references
-  resources :controllers
+
+  resources :references do
+    resources :reference_lists
+  end
+  
   get 'welcome/index'
 
   devise_for :users,:controllers => { omniauth_callbacks: 'users/omniauth_callbacks',registrations: 'users/registrations' }
