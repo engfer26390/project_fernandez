@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20170117001106) do
     t.datetime "updated_at",  null: false
   end
 
+  add_index "references", ["name"], name: "index_references_on_name", unique: true, using: :btree
+
   create_table "requests", force: :cascade do |t|
     t.text     "description",                       null: false
     t.text     "message"

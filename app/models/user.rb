@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
   has_many :identities
   belongs_to :profile, polymorphic: true
+
+  accepts_nested_attributes_for :profile
+
   # validates_presence_of :username
 
   def twitter
