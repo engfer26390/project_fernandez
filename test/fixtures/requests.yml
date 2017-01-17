@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  message: MyText
+  customer_profile_id: 
+  worker_profile_id: 
+  comment: MyText
+  rating: 9.99
+  price: 9.99
+  work_hours: 1
+
+two:
+  description: MyText
+  message: MyText
+  customer_profile_id: 
+  worker_profile_id: 
+  comment: MyText
+  rating: 9.99
+  price: 9.99
+  work_hours: 1

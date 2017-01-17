@@ -1,0 +1,2 @@
+json.extract! request, :id, :description, :message, :customer_profile_id, :worker_profile_id, :comment, :rating, :price, :work_hours, :created_at, :updated_at
+json.url request_url(request, format: :json)

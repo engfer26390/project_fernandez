@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @request.description %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @request.message %>
+</p>
+
+<p>
+  <strong>Customer profile:</strong>
+  <%= @request.customer_profile %>
+</p>
+
+<p>
+  <strong>Worker profile:</strong>
+  <%= @request.worker_profile %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @request.comment %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @request.rating %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @request.price %>
+</p>
+
+<p>
+  <strong>Work hours:</strong>
+  <%= @request.work_hours %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :requests
+  resources :reference_lists
+  resources :references
   resources :controllers
   get 'welcome/index'
 

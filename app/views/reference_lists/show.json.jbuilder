@@ -1,0 +1,1 @@
+json.partial! "reference_lists/reference_list", reference_list: @reference_list
