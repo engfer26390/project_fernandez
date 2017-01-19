@@ -63,3 +63,4 @@ group :production do
 end
 
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'money', '~> 6.8', '>= 6.8.1'
