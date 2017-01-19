@@ -61,3 +61,6 @@ group :production do
   #Rails 12factor for Heroku: https://github.com/heroku/rails_12factor
   gem 'rails_12factor'
 end
+
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'money', '~> 6.8', '>= 6.8.1'
