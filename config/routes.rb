@@ -1,27 +1,18 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :requests
   resources :references do
     resources :reference_lists
   end
 
-
   get 'welcome/index'
 
-  devise_for :users,:controllers => { omniauth_callbacks: 'users/omniauth_callbacks',registrations: 'users/registrations' }
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
-
-  get 'welcome/index'
-
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks',registrations: 'users/registrations' }
+  
+  root 'welcome#index'
 
   concern :common_user do
     resources :requests
-  end
-
-  resources :references do
-    resources :reference_lists
   end
 
   resources :worker_profiles, concerns: :common_user
