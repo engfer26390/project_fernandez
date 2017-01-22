@@ -15,8 +15,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Nosotros <span class="sr-only">(current)</span></a></li>
-        <li><a href="<%#= pins_path %>">Link</a></li>
-        <li><a href="<%#= mypins_path %>">Otro Link</a></li>
+        <li><a href="<%= worker_profiles_path %>">Workers</a></li>
+        <li><a href="<%= customer_profiles_path %>">Customers</a></li>
+        <% if current_user != nil && current_user.profile_type == 'CustomerProfile'%>
+          <li><a href="<%= new_request_path %>">Requests</a></li>
+        <% end %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">

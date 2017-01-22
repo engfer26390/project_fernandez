@@ -24,11 +24,13 @@ class CustomerProfilesController < ApplicationController
   # POST /customer_profiles
   # POST /customer_profiles.json
   def create
-    @customer_profile = CustomerProfile.new(customer_profile_params)
+    @user = current_user
+    @user.profile = @customer_profile = CustomerProfile.new(customer_profile_params)
+    @user.save!
 
     respond_to do |format|
       if @customer_profile.save
-        format.html { redirect_to @customer_profile, notice: 'Customer profile was successfully created.' }
+        format.html { redirect_to customer_profiles_path(@customer_profile), notice: 'Customer profile was successfully created.' }
         format.json { render :show, status: :created, location: @customer_profile }
       else
         format.html { render :new }
@@ -69,6 +71,6 @@ class CustomerProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_profile_params
-      params.fetch(:customer_profile, {})
+      params.require(:customer_profile).permit(:availableHours)
     end
 end

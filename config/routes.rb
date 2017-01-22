@@ -1,17 +1,24 @@
 Rails.application.routes.draw do
   resources :requests
-  resources :reference_lists
-  resources :references
-  #resources :controllers
+  resources :references do
+    resources :reference_lists
+  end
+
   get 'welcome/index'
 
-  devise_for :users,:controllers => { omniauth_callbacks: 'users/omniauth_callbacks',registrations: 'users/registrations' }
-  resource :worker_profiles
+  # You can have the root of your site routed with "root"
+  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks',registrations: 'users/registrations' }
+
+  root 'welcome#index'
+
+  concern :common_user do
+    resources :requests
+  end
+
+  resources :worker_profiles, concerns: :common_user
+  resources :customer_profiles, concerns: :common_user
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
